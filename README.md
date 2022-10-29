@@ -11,7 +11,7 @@ This book management project is built using ASP.NET Core, where I have used vari
 
 ## What are the requirements to run the web application?
 Make sure that mentioned below components are installed on your computer.
-1. .NET 5.0 [Download Link](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+1. .NET 6 [Download Link](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 2. SQL Server 2019  [Download Link](https://www.microsoft.com/en-sg/sql-server/sql-server-downloads)
 3. Visual Studio 2022 [Download Link](https://visualstudio.microsoft.com/vs/)
 
