@@ -1,0 +1,58 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border">
+            <h3 class="text-center mt-3">Delete Book</h3>
+            <hr />
+            <form method="post" asp-action="Delete">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" type="text" class="form-control" disabled/>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Author" class="form-label"></label>
+                    <input asp-for="Author" type="text" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Publisher" class="form-label"></label>
+                    <input asp-for="Publisher" type="text" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PublishDate" class="form-label"></label>
+                    <input asp-for="PublishDate" type="date" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Quantity" class="form-label"></label>
+                    <input asp-for="Quantity" type="number" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CategoryId" class="form-label"></label>
+                    <select asp-for="CategoryId" class="form-control" disabled>
+                        <option>------- Select Category ------</option>
+                        @foreach (var item in ViewBag.Category)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="CoverPicture" class="form-label"></label>
+                    <div class="col-10">
+                        <input asp-for="CoverPicture" type="file" class="form-control" disabled/>
+                    </div>
+                    <div class="col-2 text-end">
+                        <img src="~/@ViewBag.CoverPicture" class="rounded-circle" height="40px" />
+                    </div>
+                </div>
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    <a asp-action="Index" class="btn btn-sm btn-outline-info">Back to list</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

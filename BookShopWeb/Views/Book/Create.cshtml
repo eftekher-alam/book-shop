@@ -1,0 +1,66 @@
+﻿@model BookShopWeb.ViewModels.BookViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border">
+            <h3 class="text-center mt-3">Create Book</h3>
+            <hr />
+            <form method="post" asp-action="Create" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" type="text" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Author" class="form-label"></label>
+                    <input asp-for="Author" type="text" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Publisher" class="form-label"></label>
+                    <input asp-for="Publisher" type="text" class="form-control" />
+                    <span asp-validation-for="Publisher" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PublishDate" class="form-label"></label>
+                    <input asp-for="PublishDate" type="date" class="form-control" />
+                    <span asp-validation-for="PublishDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Quantity" class="form-label"></label>
+                    <input asp-for="Quantity" type="number" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CategoryId" class="form-label"></label>
+                    <select asp-for="CategoryId" class="form-control">
+                        <option>------- Select Category ------</option>
+                        @foreach (var item in ViewBag.Category)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CoverPicture" class="form-label"></label>
+                    <input asp-for="CoverPicture" type="file" class="form-control" />
+                    <span asp-validation-for="CoverPicture" class="text-danger"></span>
+                </div>
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn btn-sm btn-outline-success">Save</button>
+                    <a asp-action="Index" class="btn btn-sm btn-outline-info">Back to list</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
