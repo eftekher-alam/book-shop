@@ -159,7 +159,7 @@ namespace BookShopWeb.Controllers
         {
             _context.Books.Remove(book);
             _context.SaveChanges();
-            TempData["success"] = "Successfuly edited.!";
+            TempData["success"] = "Successfuly deleted.!";
             return RedirectToAction("Index");
         }
     }
